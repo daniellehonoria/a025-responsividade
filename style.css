@@ -1,19 +1,108 @@
+/* Dessa vez, os temas serão os mesmos em todos os exercícios: media-queries, unidades de medida, e breakpoints. 
+Os exercícios de hoje tem como entregável uma página que possui 3 layouts diferentes, a depender da largura da tela.
+
+3. O terceiro para telas de 800px ou menos.
+
+Abaixo, um gabarito das medidas em cada tamanho:
+https://jslpfmlhyrzjbddidwga.supabase.co/storage/v1/object/public/assets-conteudo/imagens/layouts.png
+
+
+E um gif do comportamento esperado:
+https://jslpfmlhyrzjbddidwga.supabase.co/storage/v1/object/public/assets-conteudo/imagens/responsividade-pratica.gif */
+
 * {
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-    color: white;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#item-1 {
+  display: flex;
+  background-color: steelblue;
+  width: 58%;
+  height: 100vh;
+  order: 2;
+  justify-content: center;
+  align-items: center;
+}
+
+#item-2 {
+  display: flex;
+  background-color: #fe7e02;
+  width: 20%;
+  height: 100vh;
+  order: 1;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#item-3 {
+  display: flex;
+  background-color: #45525b;
+  width: 20%;
+  height: 100vh;
+  order: 3;  
+    justify-content: center;
+  align-items: center;
+}
+
+/* 2. O segundo para telas entre 1200px e 800px de largura (considere 1000 como um ponto de quebra possível); */
+@media screen and (max-device-width: 1000px) {
+
+  #item-1 { 
+    width: 80vw;
+    height: 80vh;
+    order:1;
+    display:flex;
+    flex-wrap: wrap;
   }
-  
-  #item-1 {
-    background-color: steelblue;
-  }
-  
   #item-2 {
-    background-color: #fe7e02;
+    width: 100vw;
+    height: 20vh;
+    order:3;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
   }
-  
   #item-3 {
-    background-color: #45525b;
+    width: 20vw;
+    height: 80vh;
+    order:2;
+    display:flex;
+    flex-wrap: wrap;
   }
-  
+}
+
+/* 3. O terceiro para telas de 800px ou menos. */
+@media screen and (max-device-width: 800px) {
+
+  #item-1 {
+    width: 100vw;
+    height: 80vh;
+    order:1;
+    display:flex;
+    flex-wrap: wrap;
+  }
+
+  #item-2{
+    width: 50vw;
+    height: 20vh;
+    order:2;
+    flex-direction: wrap;
+
+  }
+  #item-3 {
+    width: 50vw;
+    order:3;
+    height: 20vh;
+  }
+}
+
+
